@@ -20,8 +20,6 @@ const { logger } = require('./utils');
 		.on('shardReady', (shard) => channel?.end(`${e.Check} | Shard pronto.\n${e.Info} | Shard: ${shard.id} \`${Date.format()}\``))
 		.on('shardReconnecting', (shard) => channel?.send(`${e.Loading} | Shard reconectando.\n${e.Info} | Shard: ${shard.id} \`${Date.format()}\``));
 
-	// Spawn your shards
-	logger.log('-{ Loading shard(s) }-');
 	try {
 		await manager.spawn();
 	} catch (err) {
